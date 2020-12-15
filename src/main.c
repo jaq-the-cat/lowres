@@ -3,23 +3,26 @@
 #include "3d.h"
 #include "render.h"
 
-int to_screen(int pc, int pz, Point s) {
-    return (pc * s.z) / pz;
-}
-
 int main() {
 
     Point camera = P(0, 0, 0);
-    Point s = P(0, 0, 5);
+    float d = 10;
+
+    Point p = P(0, 0, 50);
+    float psx = p.x * (d / p.z);
+    float psy = p.y * (d / p.z);
 
     initscr();
 
-    for (int i=0; i<WORLD_HEIGHT; i++) {
-        clear();
-        refresh();
-        napms(50);
-    }
+    clear();
 
+    display_point(WORLD_HEIGHT/2 + psy, WORLD_HEIGHT/2 + psx);
+
+    refresh();
+
+    getch();
     endwin();
+
+    printf("%f, %f\n", psx, psy);
     return 0;
 }

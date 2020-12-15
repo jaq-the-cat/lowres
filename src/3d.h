@@ -2,9 +2,9 @@
 #define THREED_H
 
 typedef struct {
-    int x, y, z;
+    float x, y, z;
 } Point;
 
-#define P(x, y, z) (Point) { x, y, z}
+#define P(x, y, z) (Point) {x, y, z}
 
 #endif

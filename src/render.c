@@ -28,7 +28,7 @@ void plot_line(int x0, int y0, int x1, int y1, char c) {
     }
 }
 
-void display_point(int  y, int x) {
+void display_point(int y, int x) {
     int maxy, maxx;
     getmaxyx(stdscr, maxy,  maxx);
 
