@@ -7,7 +7,7 @@ int main() {
 
     for (int i=0; i<WORLD_HEIGHT; i++) {
         clear();
-        display_line(WORLD_HEIGHT/2, WORLD_WIDTH/2, i, 490);
+        display_line(WORLD_HEIGHT/2, 10, i, 490);
         refresh();
         napms(10);
     }
