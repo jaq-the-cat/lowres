@@ -15,10 +15,10 @@ int main() {
 
     Point camera = P(0, 0, 0);
     float d = 10;
-    Point p0 = P(-20, -10, 200);
-    Point p1 = P( 20, -10, 200);
-    Point p2 = P( 20,  10, 200);
-    Point p3 = P(-20,  10, 200);
+    Point p0 = P(-60, -20, 200);
+    Point p1 = P( 60, -20, 200);
+    Point p2 = P( 60,  20, 200);
+    Point p3 = P(-60,  20, 200);
 
     for (int i=0; i<100; i++) {
         d+=2;
