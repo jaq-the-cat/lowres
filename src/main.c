@@ -16,7 +16,7 @@ int main() {
 
     clear();
 
-    display_point(WORLD_HEIGHT/2 + psy, WORLD_HEIGHT/2 + psx);
+    display_point(WORLD_HEIGHT/2 + psy, WORLD_WIDTH/2 + psx);
 
     refresh();
 
