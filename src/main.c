@@ -14,20 +14,18 @@ int main() {
     curs_set(0);
 
     Point cam = P(0, 0, 1);
-    int w = 1600, h = 800;
+    int w = 5000, h = 1600;
     int xoff = 0, yoff = 0;
-    Point p0  = P(-w/2 + xoff, -h/2 + yoff, 10);
-    Point p1  = P( w/2 + xoff, -h/2 + yoff, 10);
-    Point p2  = P( w/2 + xoff,  h/2 + yoff, 10);
-    Point p3  = P(-w/2 + xoff,  h/2 + yoff, 10);
+    Point p0  = P(-w/2 + xoff, -h/2 + yoff, 100);
+    Point p1  = P( w/2 + xoff, -h/2 + yoff, 100);
+    Point p2  = P( w/2 + xoff,  h/2 + yoff, 100);
+    Point p3  = P(-w/2 + xoff,  h/2 + yoff, 100);
 
     while (1) {
         clear();
         draw_quad(p0, p1, p2, p3, cam);
-        p0.x += -10;
-        p1.x += -10;
-        p2.x += -10;
-        p3.x += -10;
+        p0.z += -2;
+        p1.z += -2;
         refresh();
         getch();
     }
