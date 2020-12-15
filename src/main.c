@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
+
 #include "render.h"
+#include "player.h"
 
 void print_n(int y, int x, float n) {
     char buff[16];
@@ -11,7 +13,8 @@ void print_n(int y, int x, float n) {
 int main() {
     initscr();
     curs_set(0);
-
+    
+    Player p = PLAYER(WORLD_WIDTH/2, WORLD_HEIGHT/2, 0);
 
     while (1) {
         clear();
