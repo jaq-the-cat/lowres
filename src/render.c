@@ -6,7 +6,7 @@ int trans_c(float c, float max_world_c, float max_term_c) {
     return c / (max_world_c / max_term_c);
 }
 
-void plot_line(int x0, int y0, int x1, int y1) {
+void plot_line(int x0, int y0, int x1, int y1, char c) {
     int dx =  abs(x1 - x0);
     int sx = x0 < x1 ? 1 : -1;
     int dy = -abs(y1-y0);
@@ -14,7 +14,7 @@ void plot_line(int x0, int y0, int x1, int y1) {
     int err = dx + dy;  /* error value e_xy */
     int e2;
     while (1) {   /* loop */
-        mvaddch(y0, x0, 'x');
+        mvaddch(y0, x0, c);
         if (x0 == x1 && y0 == y1) break;
         e2 = 2*err;
         if (e2 >= dy) { /* e_xy+e_x > 0 */
@@ -38,5 +38,5 @@ void display_line(int y0, int x0, int y1, int x1) {
     y1 = trans_c(y1, WORLD_HEIGHT, maxy);
     x1 = trans_c(x1, WORLD_WIDTH, maxx);
 
-    plot_line(x0, y0, x1, y1);
+    plot_line(x0, y0, x1, y1, 'X');
 }
