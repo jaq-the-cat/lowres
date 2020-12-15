@@ -11,8 +11,8 @@ int main() {
 
     Point camera = P(0, 0, 0);
     Point s = P(0, 0, 5);
-    Point p0 = P(-10, -10, 20);
-    Point p1 = P( 10,  10, 20);
+    Point p0 = P(200, 100, 20);
+    Point p1 = P(300, 100, 20);
 
     int sy0 = to_screen(p0.y, p0.z, s);
     int sx0 = to_screen(p0.x, p0.z, s);
