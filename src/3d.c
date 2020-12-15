@@ -12,3 +12,10 @@ void draw_3d_line(Point p0, Point p1, int d) {
         WORLD_HEIGHT/2 + p1sy, WORLD_WIDTH/2 + p1sx
     );
 }
+
+void draw_quad(Point p0, Point p1, Point p2, Point p3, Point cam) {
+        draw_3d_line(p0, p1, cam.z);
+        draw_3d_line(p1, p2, cam.z);
+        draw_3d_line(p2, p3, cam.z);
+        draw_3d_line(p3, p0, cam.z);
+}

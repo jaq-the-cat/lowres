@@ -23,10 +23,7 @@ int main() {
 
     while (1) {
         clear();
-        draw_3d_line(p0, p1, cam.z);
-        draw_3d_line(p1, p2, cam.z);
-        draw_3d_line(p2, p3, cam.z);
-        draw_3d_line(p3, p0, cam.z);
+        draw_quad(p0, p1, p2, p3, cam);
         p0.z -= 1;
         p1.z -= 1;
         refresh();
