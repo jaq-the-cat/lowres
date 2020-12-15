@@ -28,6 +28,15 @@ void plot_line(int x0, int y0, int x1, int y1, char c) {
     }
 }
 
+void display_point(int  y, int x) {
+    int maxy, maxx;
+    getmaxyx(stdscr, maxy,  maxx);
+
+    y = trans_c(y, WORLD_HEIGHT, maxy);
+    x = trans_c(x, WORLD_WIDTH, maxx);
+
+    mvaddch(y, x, 'O');
+}
 
 void display_line(int y0, int x0, int y1, int x1) {
     int maxy, maxx;
