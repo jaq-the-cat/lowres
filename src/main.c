@@ -5,10 +5,13 @@
 int main() {
     initscr();
 
-    display_line(10, 10, 190, 490);
-    refresh();
+    for (int i=0; i<WORLD_HEIGHT; i++) {
+        clear();
+        display_line(WORLD_HEIGHT/2, WORLD_WIDTH/2, i, 490);
+        refresh();
+        napms(10);
+    }
 
-    getch();
     endwin();
     return 0;
 }
