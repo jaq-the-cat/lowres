@@ -13,20 +13,19 @@ int main() {
     initscr();
     curs_set(0);
 
-    Point camera = P(0, 0, 0);
-    float d = 10;
+    Point cam= P(0, 0, 0);
     Point p0 = P(-60, -20, 200);
     Point p1 = P( 60, -20, 200);
     Point p2 = P( 60,  20, 200);
     Point p3 = P(-60,  20, 200);
 
     for (int i=0; i<100; i++) {
-        d+=2;
+        cam.z+=2;
         clear();
-        draw_3d_line(p0, p1, d);
-        draw_3d_line(p1, p2, d);
-        draw_3d_line(p2, p3, d);
-        draw_3d_line(p3, p0, d);
+        draw_3d_line(p0, p1, cam.z);
+        draw_3d_line(p1, p2, cam.z);
+        draw_3d_line(p2, p3, cam.z);
+        draw_3d_line(p3, p0, cam.z);
         refresh();
         napms(30);
     }
