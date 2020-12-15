@@ -9,6 +9,6 @@ typedef struct  {
     float rotation;
 } Player;
 
-#define PLAYER(x, y, r) (Player) { (Point) { x, y }, r }
+#define PLAYER(x, y, r) (Player) { POINT(x, y), r }
 
 #endif

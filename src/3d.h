@@ -3,6 +3,8 @@
 
 typedef struct {
     float x, y;
-} Point ;
+} Point;
+
+#define POINT(x, y) (Point) { x, y }
 
 #endif
