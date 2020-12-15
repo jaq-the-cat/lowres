@@ -24,8 +24,10 @@ int main() {
     while (1) {
         clear();
         draw_quad(p0, p1, p2, p3, cam);
-        p0.z -= 1;
-        p1.z -= 1;
+        p0.x += -10;
+        p1.x += -10;
+        p2.x += -10;
+        p3.x += -10;
         refresh();
         getch();
     }
