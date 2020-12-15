@@ -14,10 +14,10 @@ int main() {
     curs_set(0);
 
     Point cam= P(0, 0, 0);
-    Point p0 = P(-60, -20, 200);
-    Point p1 = P( 60, -20, 200);
-    Point p2 = P( 60,  20, 200);
-    Point p3 = P(-60,  20, 200);
+    Point p0 = P(-60, -20, 100);
+    Point p1 = P( 60, -20, 100);
+    Point p2 = P( 60,  20, 100);
+    Point p3 = P(-60,  20, 100);
 
     for (int i=0; i<100; i++) {
         cam.z+=2;
