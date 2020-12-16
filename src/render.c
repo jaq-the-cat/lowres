@@ -2,7 +2,7 @@
 
 #include "render.h"
 
-int trans_c(float c, float max_world_c, float max_term_c) {
+int trans_c(double c, double max_world_c, double max_term_c) {
     return c / (max_world_c / max_term_c);
 }
 

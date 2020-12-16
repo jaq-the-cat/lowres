@@ -2,7 +2,7 @@
 #define THREED_H
 
 typedef struct {
-    float x, y;
+    double x, y;
 } Point;
 
 typedef struct {

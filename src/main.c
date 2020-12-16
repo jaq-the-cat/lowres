@@ -5,15 +5,17 @@
 #include "render.h"
 #include "player.h"
 
-void print_n(int y, int x, float n) {
+void print_n(int y, int x, double n) {
     char buff[16];
-    sprintf(buff, "%f", n);
+    sprintf(buff, "%fl", n);
     mvaddstr(y, x, buff);
 }
 
 void rotate_point(Point c, Point *p, double angle) {
-    p->x = cos(angle) * (p->x - c.x) - sin(angle) * (p->y - c.y) + c.x;
-    p->y = sin(angle) * (p->x - c.x) + cos(angle) * (p->y - c.y) + c.y;
+    double oldx = p->x - c.x;
+    double oldy = p->y - c.y;
+    p->x = (oldx * cos(angle) - oldy * sin(angle)) + c.x;
+    p->y = (oldx * sin(angle) + oldy * cos(angle)) + c.y;
 }
 
 void rotate_line(Point c, Line *l, double angle) {
@@ -26,9 +28,13 @@ int main() {
     curs_set(0);
     
     Player p = PLAYER(WORLD_WIDTH/2, WORLD_HEIGHT/2, 0);
-    Point o = POINT(WORLD_WIDTH/2 - 10, WORLD_HEIGHT/2 - 40);
+    Point o = POINT(WORLD_WIDTH/2, WORLD_HEIGHT/2 - 40);
     while (1) {
         clear();
+        print_n(0, 0, p.origin.x);
+        print_n(1, 0, p.origin.y);
+        print_n(2, 0, o.x);
+        print_n(3, 0, o.y);
         display_point(o.y, o.x, 'C');
         print_player(&p);
         refresh();
