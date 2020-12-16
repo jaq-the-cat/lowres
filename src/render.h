@@ -3,7 +3,7 @@
 
 #include <ncurses.h>
 
-#define WORLD_HEIGHT 320
+#define WORLD_HEIGHT 180
 #define WORLD_WIDTH 320
 
 int trans_c(double c, double max_world_c, double max_term_c);

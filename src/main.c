@@ -5,6 +5,10 @@
 #include "render.h"
 #include "player.h"
 
+#define PI 3.14
+
+#define RAD(deg) deg * (PI/180)
+
 void print_n(int y, int x, double n) {
     char buff[16];
     sprintf(buff, "%fl", n);
@@ -38,7 +42,7 @@ int main() {
         print_player(&p);
         refresh();
         getch();
-        rotate_line(p.origin, wall, 0.2);
+        rotate_line(p.origin, wall, RAD(12));
     }
 
     curs_set(1);
