@@ -4,3 +4,4 @@ src/render.c
 src/player.c
 -LIBS
 ncurses
+m

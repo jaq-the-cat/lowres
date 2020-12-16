@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 
 #include "render.h"
 #include "player.h"
@@ -16,7 +17,7 @@ int main() {
     
     Player p = PLAYER(WORLD_WIDTH/2, WORLD_HEIGHT/2, 0);
     Line wall = LINE(
-            WORLD_WIDTH/2 - 10, WORLD_HEIGHT/2 - 10,
+            WORLD_WIDTH/2 - 10, WORLD_HEIGHT/2 - 40,
             WORLD_WIDTH/2 + 10, WORLD_HEIGHT/2 - 10
             );
 
