@@ -11,4 +11,6 @@ typedef struct  {
 
 #define PLAYER(x, y, r) (Player) { POINT(x, y), r }
 
+void print_player(Player *p);
+
 #endif

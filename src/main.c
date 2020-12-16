@@ -18,6 +18,7 @@ int main() {
 
     while (1) {
         clear();
+        print_player(&p);
         refresh();
         getch();
     }
