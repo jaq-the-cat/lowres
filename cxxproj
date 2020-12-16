@@ -2,6 +2,8 @@
 src/main.c
 src/render.c
 src/player.c
+src/func.c
+
 -LIBS
 ncurses
 m
