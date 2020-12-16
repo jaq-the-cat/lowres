@@ -1,18 +1,18 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "func.h"
 #include "render.h"
 #include "player.h"
+#include "3d.h"
 
 int main() {
     initscr();
     curs_set(0);
     
-    Player p = PLAYER(WORLD_WIDTH/2, WORLD_HEIGHT/2, 0);
+    Player p = PLAYER(0, 0, 0);
     Line wall = {
-        POINT(WORLD_WIDTH/2-20, WORLD_HEIGHT/2 - 40),
-        POINT(WORLD_WIDTH/2+20, WORLD_HEIGHT/2 - 40),
+        POINT(-20, -40),
+        POINT( 20, -40),
     };
     while (1) {
         clear();

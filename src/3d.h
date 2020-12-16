@@ -3,10 +3,11 @@
 
 #include <ncurses.h>
 #include <math.h>
+#include "render.h"
 
 #define PI 3.14
 #define RAD(deg) deg * (PI/180)
-#define POINT(x, y) (Point) { x, y }
+#define POINT(x, y) (Point) { WORLD_WIDTH/2 + (x), WORLD_HEIGHT/2 + (y) }
 #define LINE(x0, y0, x1, y1) { POINT(x0, y0), POINT(x1, y1) }
 
 typedef struct {
