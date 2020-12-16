@@ -5,9 +5,7 @@ typedef struct {
     double x, y;
 } Point;
 
-typedef struct {
-    Point p0, p1;
-} Line;
+typedef Point Line[2];
 
 #define POINT(x, y) (Point) { x, y }
 #define LINE(x0, y0, x1, y1) { POINT(x0, y0), POINT(x1, y1) }

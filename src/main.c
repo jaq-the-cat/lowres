@@ -18,9 +18,9 @@ void rotate_point(Point c, Point *p, double angle) {
     p->y = (oldx * sin(angle) + oldy * cos(angle)) + c.y;
 }
 
-void rotate_line(Point c, Line *l, double angle) {
-    rotate_point(c, &l->p0, angle);
-    rotate_point(c, &l->p1, angle);
+void rotate_line(Point c, Line l, double angle) {
+    rotate_point(c, &l[0], angle);
+    rotate_point(c, &l[1], angle);
 }
 
 int main() {
@@ -28,18 +28,17 @@ int main() {
     curs_set(0);
     
     Player p = PLAYER(WORLD_WIDTH/2, WORLD_HEIGHT/2, 0);
-    Point o = POINT(WORLD_WIDTH/2, WORLD_HEIGHT/2 - 40);
+    Line wall = {
+        POINT(WORLD_WIDTH/2-20, WORLD_HEIGHT/2 - 40),
+        POINT(WORLD_WIDTH/2+20, WORLD_HEIGHT/2 - 40),
+    };
     while (1) {
         clear();
-        print_n(0, 0, p.origin.x);
-        print_n(1, 0, p.origin.y);
-        print_n(2, 0, o.x);
-        print_n(3, 0, o.y);
-        display_point(o.y, o.x, 'C');
+        display_line(wall[0].y, wall[0].x, wall[1].y, wall[1].x);
         print_player(&p);
         refresh();
         getch();
-        rotate_point(p.origin, &o, 0.2);
+        rotate_line(p.origin, wall, 0.2);
     }
 
     curs_set(1);
