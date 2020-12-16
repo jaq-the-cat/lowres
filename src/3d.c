@@ -1,4 +1,4 @@
-#include "func.h"
+#include "3d.h"
 
 void print_n(int y, int x, double n) {
     char buff[16];

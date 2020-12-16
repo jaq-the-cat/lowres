@@ -2,7 +2,7 @@
 src/main.c
 src/render.c
 src/player.c
-src/func.c
+src/3d.c
 
 -LIBS
 ncurses
