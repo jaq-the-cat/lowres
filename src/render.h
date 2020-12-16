@@ -3,8 +3,8 @@
 
 #include <ncurses.h>
 
-#define WORLD_HEIGHT 200
-#define WORLD_WIDTH 500
+#define WORLD_HEIGHT 320
+#define WORLD_WIDTH 180
 
 int trans_c(float c, float max_world_c, float max_term_c);
 void display_point(int y, int x, char c);
