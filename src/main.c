@@ -30,7 +30,7 @@ int main() {
     while (1) {
         clear();
         for (i=0; i<WALLS; i++)
-            display_wall(walls[i]);
+            display_wall(walls[i], 1);
         print_player(&p);
         refresh();
         movement_vec[0] = 0;

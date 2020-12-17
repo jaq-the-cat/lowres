@@ -73,12 +73,12 @@ void display_line(int y0, int x0, int y1, int x1) {
     plot_line(x0, y0, x1, y1, 'X');
 }
 
-void display_wall(Line wall) {
+void display_wall(Line wall, int d) {
     display_line(
-        wall[0].x * (wall[0].y / 1),
-        wall[0].y * (wall[0].y / 1),
+        1 * (d / wall[0].y),
+        wall[0].x * (d / wall[0].y),
 
-        wall[1].x * (wall[1].y / 1),
-        wall[1].y * (wall[1].y / 1)
+        1 * (d / wall[1].y),
+        wall[1].x * (d / wall[1].y)
     );
 }
