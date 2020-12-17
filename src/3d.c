@@ -17,3 +17,10 @@ void rotate_line(Point c, Line l, double angle) {
     rotate_point(c, &l[0], angle);
     rotate_point(c, &l[1], angle);
 }
+
+void trans_line(Line l, double v[2]) {
+    for (int i=0; i<2; i++) {
+        l[i].x -= v[0];
+        l[i].y -= v[1];
+    }
+}

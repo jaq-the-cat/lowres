@@ -24,6 +24,8 @@ int main() {
         display_line(wall[0].y, wall[0].x, wall[1].y, wall[1].x);
         print_player(&p);
         refresh();
+        movement_vec[0] = 0;
+        movement_vec[1] = 0;
         switch (getch()) {
             case 'w':
                 movement_vec[1] = 5;
@@ -44,6 +46,7 @@ int main() {
                 rotate_line(p.origin, wall, RAD(ROTATION));
                 break;
         }
+        trans_line(wall, movement_vec);
     }
 
     curs_set(1);

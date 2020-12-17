@@ -19,5 +19,6 @@ typedef Point Line[2];
 void print_n(int y, int x, double n);
 void rotate_point(Point c, Point *p, double angle);
 void rotate_line(Point c, Line l, double angle);
+void trans_line(Line l, double v[2]);
 
 #endif
