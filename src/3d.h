@@ -3,6 +3,7 @@
 
 #include <ncurses.h>
 #include <math.h>
+#include <stdlib.h>
 
 #define WORLD_HEIGHT 180
 #define WORLD_WIDTH 320
