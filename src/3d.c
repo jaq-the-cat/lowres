@@ -75,10 +75,10 @@ void display_line(int y0, int x0, int y1, int x1) {
 
 void display_wall(Line wall, int d) {
     display_line(
-        1 * (d / wall[0].y),
-        wall[0].x * (d / wall[0].y),
+        WORLD_HEIGHT/2 + (1 * (d / wall[0].y)),
+        WORLD_WIDTH/2 + (wall[0].x * (d / wall[0].y)),
 
-        1 * (d / wall[1].y),
-        wall[1].x * (d / wall[1].y)
+        WORLD_HEIGHT/2 + (1 * (d / wall[1].y)),
+        WORLD_WIDTH/2 + (wall[1].x * (d / wall[1].y))
     );
 }
