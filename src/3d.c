@@ -74,17 +74,17 @@ void display_line(int y0, int x0, int y1, int x1) {
 }
 
 
-void display_3d_line(Line line, int d) {
-    double p0y = WORLD_HEIGHT/2 - 10 + (1 * (d / line[0].y));
+void display_3d_line(Line line, int h, int d) {
+    double p0y = WORLD_HEIGHT/2 - h + (1 * (d / line[0].y));
     double p0x = WORLD_WIDTH/2 + (line[0].x * (d / line[0].y));
 
-    double p1y = WORLD_HEIGHT/2 - 10 + (1 * (d / line[1].y));
+    double p1y = WORLD_HEIGHT/2 - h + (1 * (d / line[1].y));
     double p1x = WORLD_WIDTH/2 + (line[1].x * (d / line[1].y));
 
-    double p2y = WORLD_HEIGHT/2 + 10 + (1 * (d / line[1].y));
+    double p2y = WORLD_HEIGHT/2 + h + (1 * (d / line[1].y));
     double p2x = WORLD_WIDTH/2 + (line[1].x * (d / line[1].y));
 
-    double p3y = WORLD_HEIGHT/2 + 10 + (1 * (d / line[1].y));
+    double p3y = WORLD_HEIGHT/2 + h + (1 * (d / line[1].y));
     double p3x = WORLD_WIDTH/2 + (line[0].x * (d / line[0].y));
 
     display_line(p0y, p0x, p1y, p1x);

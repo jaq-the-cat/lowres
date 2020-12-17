@@ -6,7 +6,7 @@
 
 #define ROTATION 12
 
-#define WALLS 2
+#define WALLS 1
 
 int main() {
     initscr();
@@ -19,21 +19,27 @@ int main() {
         LINE(
             -20, -40,
             20, -40
-        ),
-        LINE(
-            20, -40,
-            20, 0
-        ),
+        )
     };
 
     int i;
     while (1) {
         clear();
+        print_player(&p);
+
+        print_n(0, 0, walls[0][0].y);
+        print_n(1, 0, walls[0][0].x);
+
+        print_n(3, 0, walls[0][1].y);
+        print_n(4, 0, walls[0][1].x);
+
+        print_n(6, 0, p.origin.y);
+
+        print_n(8, 0, p.origin.y - walls[0][0].y);
         for (i=0; i<WALLS; i++) {
-            /*display_line(walls[i][0].y, walls[i][0].x, walls[i][1].y, walls[i][1].x);*/
-            display_3d_line(walls[i], walls[i]->y - p.origin.y);
+            display_line(walls[i][0].y, walls[i][0].x, walls[i][1].y, walls[i][1].x);
+            display_3d_line(walls[i], 30, p.origin.y - walls[i][0].y);
         }
-        /*print_player(&p);*/
         refresh();
         movement_vec[0] = 0;
         movement_vec[1] = 0;

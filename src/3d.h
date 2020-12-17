@@ -28,6 +28,6 @@ int trans_c(double c, double max_world_c, double max_term_c);
 void display_point(int y, int x, char c);
 void display_line(int y0, int x0, int y1, int x1);
 
-void display_3d_line(Line line, int d);
+void display_3d_line(Line line, int h, int d);
 
 #endif
