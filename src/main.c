@@ -31,7 +31,7 @@ int main() {
         clear();
         for (i=0; i<WALLS; i++) {
             display_line(walls[i][0].y, walls[i][0].x, walls[i][1].y, walls[i][1].x);
-            display_3d_line(walls[i], abs((int) (p.origin.y - walls[i]->y)));
+            display_3d_line(walls[i], walls[i]->y - p.origin.y);
         }
         /*print_player(&p);*/
         refresh();
