@@ -29,9 +29,11 @@ int main() {
     int i;
     while (1) {
         clear();
-        for (i=0; i<WALLS; i++)
-            display_wall(walls[i], 1);
-        print_player(&p);
+        for (i=0; i<WALLS; i++) {
+            display_line(walls[i][0].y, walls[i][0].x, walls[i][1].y, walls[i][1].x);
+            display_3d_line(walls[i], abs((int) (p.origin.y - walls[i]->y)));
+        }
+        /*print_player(&p);*/
         refresh();
         movement_vec[0] = 0;
         movement_vec[1] = 0;
