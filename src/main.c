@@ -29,9 +29,6 @@ int main() {
     int i;
     while (1) {
         clear();
-        print_n(0, 0, p.origin.y);
-        print_n(1, 0, walls[0]->y);
-        print_n(2, 0, walls[1]->y);
         for (i=0; i<WALLS; i++) {
             /*display_line(walls[i][0].y, walls[i][0].x, walls[i][1].y, walls[i][1].x);*/
             display_3d_line(walls[i], walls[i]->y - p.origin.y);

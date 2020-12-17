@@ -85,7 +85,7 @@ void display_3d_line(Line line, int d) {
     double p2x = WORLD_WIDTH/2 + (line[1].x * (d / line[1].y));
 
     double p3y = WORLD_HEIGHT/2 + 10 + (1 * (d / line[1].y));
-    double p3x = WORLD_WIDTH/2 + (line[1].x * (d / line[1].y));
+    double p3x = WORLD_WIDTH/2 + (line[0].x * (d / line[0].y));
 
     display_line(p0y, p0x, p1y, p1x);
     display_line(p1y, p1x, p2y, p2x);
