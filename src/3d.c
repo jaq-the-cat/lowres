@@ -73,12 +73,22 @@ void display_line(int y0, int x0, int y1, int x1) {
     plot_line(x0, y0, x1, y1, 'X');
 }
 
-void display_3d_line(Line line, int d) {
-    display_line(
-        WORLD_HEIGHT/2 + (1 * (d / line[0].y)),
-        WORLD_WIDTH/2 + (line[0].x * (d / line[0].y)),
 
-        WORLD_HEIGHT/2 + (1 * (d / line[1].y)),
-        WORLD_WIDTH/2 + (line[1].x * (d / line[1].y))
-    );
+void display_3d_line(Line line, int d) {
+    double p0y = WORLD_HEIGHT/2 - 10 + (1 * (d / line[0].y));
+    double p0x = WORLD_WIDTH/2 + (line[0].x * (d / line[0].y));
+
+    double p1y = WORLD_HEIGHT/2 - 10 + (1 * (d / line[1].y));
+    double p1x = WORLD_WIDTH/2 + (line[1].x * (d / line[1].y));
+
+    double p2y = WORLD_HEIGHT/2 + 10 + (1 * (d / line[1].y));
+    double p2x = WORLD_WIDTH/2 + (line[1].x * (d / line[1].y));
+
+    double p3y = WORLD_HEIGHT/2 + 10 + (1 * (d / line[1].y));
+    double p3x = WORLD_WIDTH/2 + (line[1].x * (d / line[1].y));
+
+    display_line(p0y, p0x, p1y, p1x);
+    display_line(p1y, p1x, p2y, p2x);
+    display_line(p2y, p2x, p3y, p3x);
+    display_line(p3y, p3x, p0y, p0x);
 }
