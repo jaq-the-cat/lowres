@@ -2,7 +2,6 @@
 #define PLAYER_H
 
 #include "3d.h"
-#include "render.h"
 
 typedef struct  {
     Point origin;

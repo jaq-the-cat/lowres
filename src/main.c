@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "render.h"
 #include "player.h"
 #include "3d.h"
 
