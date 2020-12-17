@@ -7,6 +7,8 @@
 
 #define ROTATION 12
 
+#define WALLS 2
+
 int main() {
     initscr();
     curs_set(0);
@@ -14,39 +16,50 @@ int main() {
     Player p = PLAYER(0, 0, 0);
     double movement_vec[2] = {0};
 
-    Line wall = {
-        POINT(-20, -40),
-        POINT( 20, -40),
+    Line walls[WALLS] = {
+        LINE(
+            -20, -40,
+            20, -40
+        ),
+        LINE(
+            -20, 40,
+            20, 40
+        ),
     };
 
+    int i;
     while (1) {
         clear();
-        display_line(wall[0].y, wall[0].x, wall[1].y, wall[1].x);
+        for (i=0; i<WALLS; i++)
+            display_line(walls[i][0].y, walls[i][0].x, walls[i][1].y, walls[i][1].x);
         print_player(&p);
         refresh();
         movement_vec[0] = 0;
         movement_vec[1] = 0;
         switch (getch()) {
             case 'w':
-                movement_vec[1] = 5;
+                movement_vec[1] = -5;   // UP
                 break;
             case 'q':
-                movement_vec[0] = -5;
+                movement_vec[0] = -5;   // LEFT
                 break;
             case 's':
-                movement_vec[1] = -5;
+                movement_vec[1] = 5;    // DOWN
                 break;
             case 'e':
-                movement_vec[0] = 5;
+                movement_vec[0] = 5;    // RIGHT
                 break;
-            case 'd':
-                rotate_line(p.origin, wall, RAD(-ROTATION));
+            case 'd':                   // TURN LEFT
+                for (i=0; i<WALLS; i++)
+                    rotate_line(p.origin, walls[i], RAD(-ROTATION));
                 break;
-            case 'a':
-                rotate_line(p.origin, wall, RAD(ROTATION));
+            case 'a':                   // TURN RIGHT
+                for (i=0; i<WALLS; i++)
+                    rotate_line(p.origin, walls[i], RAD(ROTATION));
                 break;
         }
-        trans_line(wall, movement_vec);
+        for (i=0; i<WALLS; i++)
+            trans_line(walls[i], movement_vec);
     }
 
     curs_set(1);
