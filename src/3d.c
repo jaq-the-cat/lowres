@@ -1,11 +1,5 @@
 #include "3d.h"
 
-void print_n(int y, int x, double n) {
-    char buff[16];
-    sprintf(buff, "%fl", n);
-    mvaddstr(y, x, buff);
-}
-
 void rotate_point(Point c, Point *p, double angle) {
     double oldx = p->x - c.x;
     double oldy = p->y - c.y;
